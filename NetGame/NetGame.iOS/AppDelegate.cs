@@ -26,7 +26,7 @@ namespace NetGame.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            Distribute.DontCheckForUpdatesInDebug();
+ //           Distribute.DontCheckForUpdatesInDebug();
 
             LoadApplication(new App());
 

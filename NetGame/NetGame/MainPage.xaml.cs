@@ -35,9 +35,6 @@ namespace NetGame
                     { "content", content}});
                 Editor editor = new Editor { Text = content, VerticalOptions = LayoutOptions.CenterAndExpand };
                 workArea.Content = editor;
-
-
-                
             }
         }
 
