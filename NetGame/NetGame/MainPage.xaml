@@ -2,10 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NetGame"
-             x:Class="NetGame.MainPage">
+             x:Class="NetGame.MainPage"
+            Title="ログインページ">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
+    <StackLayout>
+        <Label Text="ログインページ" 
            HorizontalOptions="Center" />
+        <Button Text="ログインします(お手本ページへ接続)" x:Name="buttonOtehon"/>
+        <Button Text="ログインします(自作サーバーへ接続)" x:Name="buttonJisaku"/>
+    </StackLayout>
 
 </ContentPage>
