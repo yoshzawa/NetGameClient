@@ -22,6 +22,8 @@ namespace NetGame
         {
             String url = "https://h29netgame.azurewebsites.net/Login?id=5";
 
+            ActivityIndicator loading = new ActivityIndicator { IsRunning = true, VerticalOptions = LayoutOptions.CenterAndExpand };
+            workArea.Content = loading;
             HttpClient client = new HttpClient();
             var result = await client.GetAsync(url);
             if (result.IsSuccessStatusCode)
@@ -31,10 +33,12 @@ namespace NetGame
                 Analytics.TrackEvent("get from Server", new Dictionary<string, string> {
                     { "server", url},
                     { "content", content}});
+                Editor editor = new Editor { Text = content, VerticalOptions = LayoutOptions.CenterAndExpand };
+                workArea.Content = editor;
+
+
+                
             }
-
-
-
         }
 
         private void ButtonJisaku_Clicked(object sender, EventArgs e)

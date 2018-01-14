@@ -14,6 +14,11 @@
            HorizontalOptions="Center" />
         <Button Text="ログインします(お手本ページへ接続)" x:Name="buttonOtehon"/>
         <Button Text="ログインします(自作サーバーへ接続)" x:Name="buttonJisaku"/>
+        <ScrollView Orientation="Vertical">
+            <ContentPage x:Name="workArea">
+                <Label Text="ファイルが読み込まれていません" />
+        </ContentPage>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
