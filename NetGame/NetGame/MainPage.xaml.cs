@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Microsoft.AppCenter.Analytics;
 
 namespace NetGame
 {
@@ -25,7 +26,11 @@ namespace NetGame
             if (result.IsSuccessStatusCode)
             {
                 var content = await result.Content.ReadAsStringAsync();
-//                Items = JsonConvert.DeserializeObject<List<TodoItem>>(content);
+                //                Items = JsonConvert.DeserializeObject<List<TodoItem>>(content);
+                Analytics.TrackEvent("get from Server", new Dictionary<string, string> {
+                    { "server", url},
+                    { "content", content}});
+
             }
 
 
