@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Distribute;
+
 
 namespace NetGame.iOS
 {
@@ -23,6 +26,8 @@ namespace NetGame.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Distribute.DontCheckForUpdatesInDebug();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

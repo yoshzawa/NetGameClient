@@ -5,6 +5,12 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
+
+
 namespace NetGame
 {
 	public partial class App : Application
@@ -12,8 +18,13 @@ namespace NetGame
 		public App ()
 		{
 			InitializeComponent();
+            AppCenter.Start("ios=739f8497-0d0d-47c7-82e5-95a5e5babfac;" + "uwp={Your UWP App secret here};" +
+                   "android={Your Android App secret here}",
+                   typeof(Analytics), typeof(Crashes));
+            AppCenter.LogLevel = LogLevel.Verbose;
 
-			MainPage = new NetGame.MainPage();
+
+            MainPage = new NetGame.MainPage();
 		}
 
 		protected override void OnStart ()
