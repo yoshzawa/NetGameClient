@@ -21,6 +21,7 @@ namespace NetGame
         private async void ButtonOtehon_Clicked(object sender, EventArgs e)
         {
             String url = "https://h29netgame.azurewebsites.net/Login?id=5";
+
             HttpClient client = new HttpClient();
             var result = await client.GetAsync(url);
             if (result.IsSuccessStatusCode)
@@ -30,8 +31,8 @@ namespace NetGame
                 Analytics.TrackEvent("get from Server", new Dictionary<string, string> {
                     { "server", url},
                     { "content", content}});
-
             }
+
 
 
         }
