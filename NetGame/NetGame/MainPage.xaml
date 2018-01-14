@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:NetGame"
              x:Class="NetGame.MainPage"
             Title="ログインページ">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="0,20,0,0"/>
+    </ContentPage.Padding>
 
     <StackLayout>
         <Label Text="ログインページ" 
